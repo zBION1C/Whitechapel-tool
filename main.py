@@ -6,7 +6,7 @@ def main():
     root = Tk()
     root.resizable(False, False) # Windows is not resizable
     root.config(bg='black') # Grey background
-    root.geometry("1950x940") # Window size
+    root.geometry("1960x940") # Window size
 
     # Left frame for map and drawings
     left_frame = Frame(root, width=1300, height=928)
@@ -30,9 +30,11 @@ def main():
     hint_value = IntVar()
     time_value = IntVar()
     Label(right_frame, text='Hint node: ').grid(row=1, column=0)
-    Entry(right_frame, textvariable=hint_value).grid(row=1, column=1, pady=4)
-    Entry(right_frame, textvariable=time_value).grid(row=1, column=2, pady=4)
-    Button(right_frame, text='Advance', command=lambda v=(hint_value.get(), time_value.get()): g.advance(v)).grid(row=1,column=3, pady=4)
+    entry1 = Entry(right_frame, textvariable=hint_value).grid(row=1, column=1, pady=4)
+    entry2 = Entry(right_frame, textvariable=time_value).grid(row=1, column=2, pady=4)
+    Button(right_frame, text='Hint', command=lambda v=(hint_value, time_value): g.hint(v)).grid(row=1,column=3, pady=4)
+
+    Button(right_frame, text='Advance', command=lambda: g.advance()).grid(row=2,column=2, pady=4)
 
     round = g.get_current_round()
     round.set_starting_node(m.get_node(27))

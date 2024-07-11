@@ -19,7 +19,7 @@ class Node():
         if self.possible:
             canvas.itemconfig(self.canvas_element, fill='white', width=2)
         elif self.hint: 
-            canvas.itemconfig(self.canvas_element, fill='yellow', width=2)
+            canvas.itemconfig(self.canvas_element, fill='lightgreen', width=2)
         else: 
             canvas.itemconfig(self.canvas_element, fill='grey', width=2)
 
@@ -35,3 +35,5 @@ class Node():
     def reset(self):
         self.possible = False
         self.hint = False
+    
+    

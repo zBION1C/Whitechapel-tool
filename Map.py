@@ -40,7 +40,7 @@ class Map():
     # Draw the initial state of the graph, saving the handles to canvas item to not redraw them.
     def draw(self):
         for node in self.nodes.values():
-            node.draw(self.canvas)
+            node.draw(self.canvas)    
 
     # Get the Node object from an ID
     def get_node(self, id):
